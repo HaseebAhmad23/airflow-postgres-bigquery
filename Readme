@@ -1,0 +1,126 @@
+# Postgres to BigQuery ELT Pipeline using Apache Airflow
+
+This project demonstrates an end-to-end ELT pipeline using:
+
+- Apache Airflow (Dockerized)
+- PostgreSQL (Source Database)
+- Google BigQuery (Data Warehouse)
+- Python (psycopg2, pandas, google-cloud-bigquery)
+
+---
+
+## Architecture
+
+Postgres (webshop database)
+        ↓
+Apache Airflow DAG
+        ↓
+BigQuery raw_data dataset
+
+---
+
+## Project Structure
+
+airflow-project/
+│
+├── dags/
+│ └── postgres_to_bigquery.py
+│
+├── Dockerfile
+├── docker-compose.yaml
+├── .gitignore
+└── README.md
+
+---
+
+## Setup Instructions
+
+### 1️- Install Docker (v24+ recommended)
+
+docker --version
+docker compose version
+
+---
+
+### 2️- Build Custom Airflow Image
+
+docker compose build --no-cache
+docker compose up airflow-init
+docker compose up
+
+---
+
+### 3️- Configure Google BigQuery Credentials
+
+Create a `keys/` folder and place your service account JSON file:
+
+airflow-project/keys/gcp-key.json
+
+Note: This folder is ignored in `.gitignore` and should never be committed.
+
+Update docker-compose environment:
+
+GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp-key.json
+
+---
+
+### 4️- Access Airflow UI
+
+http://localhost:8080
+
+Default credentials:
+
+Username: airflow
+Password: airflow
+
+---
+
+## DAG Behavior
+
+The DAG:
+
+- Connects to PostgreSQL
+- Extracts data from:
+  - customer
+  - products
+  - order
+  - order_positions
+- Loads each table into BigQuery `raw_data` dataset
+- Uses WRITE_TRUNCATE mode
+
+---
+
+## Key Concepts Demonstrated
+
+- Docker networking
+- Airflow DAG design
+- PythonOperator usage
+- Postgres extraction
+- BigQuery loading via dataframe
+- Secure credential handling
+- Infrastructure troubleshooting
+
+---
+
+## Security
+
+- Service account keys are excluded via `.gitignore`
+- No secrets are stored in the repository
+
+---
+
+## Future Improvements
+
+- Incremental loading
+- Idempotent upserts
+- dbt integration
+- Task-level parallelization
+- Monitoring & alerting
+- CI/CD deployment
+
+---
+
+##  Author
+
+Haseeb Ahmad  (Full-Stack Developer)
+Data Engineering Project
