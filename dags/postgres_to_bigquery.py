@@ -8,7 +8,7 @@ from google.cloud import bigquery
 def extract_and_load():
     # Connect to Postgres
     conn = psycopg2.connect(
-        host="localhost",   # Important!
+        host="172.17.0.1",   # Important!
         database="webshop",
         user="postgres",
         password="postgres"
