@@ -17,7 +17,10 @@ TABLES = [
     "customer",
     "products",
     "order",
-    "order_positions"
+    "order_positions",
+    "address",
+    "articles",
+    "stock"
 ]
 
 def extract_and_load():
