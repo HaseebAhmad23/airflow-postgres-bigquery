@@ -1,27 +1,40 @@
-# Postgres to BigQuery ELT Pipeline using Apache Airflow
+# Airflow EL Pipeline – PostgreSQL to BigQuery
 
-This project demonstrates an end-to-end ELT pipeline using:
+This repository contains the Extraction & Loading (EL) layer of an end-to-end Data Engineering pipeline.
 
-- Apache Airflow (Dockerized)
-- PostgreSQL (Source Database)
-- Google BigQuery (Data Warehouse)
-- Python (psycopg2, pandas, google-cloud-bigquery)
+The pipeline extracts data from PostgreSQL and loads it into Google BigQuery, preparing it for downstream transformation with dbt.
 
----
+## Architecture Overview
 
-## Architecture
-
-Postgres (webshop database)
+PostgreSQL (Webshop DB)
         ↓
 Apache Airflow DAG
         ↓
-BigQuery raw_data dataset
+Python Operators
+        ↓
+Google BigQuery (raw_data dataset)
 
+This project focuses exclusively on orchestration and data ingestion.
+
+---
+
+## Technologies Used
+
+1. Apache Airflow (Docker-based setup)
+
+2. PostgreSQL
+
+3. Google BigQuery
+
+4. Python
+
+5. Google Cloud Service Accounts
+   
 ---
 
 ## Project Structure
 
-airflow-project/
+airflow-postgres-bigquery/
 │
 ├── dags/
 │ └── postgres_to_bigquery.py
@@ -30,6 +43,20 @@ airflow-project/
 ├── docker-compose.yaml
 ├── .gitignore
 └── README.md
+
+---
+
+## Pipeline Flow
+
+1. Connect to PostgreSQL source database
+
+2. Extract tables (customer, order, order_positions, products)
+
+3. Transform minimal structure for loading
+
+4. Load into BigQuery raw_data dataset
+
+5. Prepare data for dbt transformation layer
 
 ---
 
@@ -104,19 +131,9 @@ The DAG:
 
 ## Security
 
+- No credentials stored in repository
 - Service account keys are excluded via `.gitignore`
 - No secrets are stored in the repository
-
----
-
-## Future Improvements
-
-- Incremental loading
-- Idempotent upserts
-- dbt integration
-- Task-level parallelization
-- Monitoring & alerting
-- CI/CD deployment
 
 ---
 
