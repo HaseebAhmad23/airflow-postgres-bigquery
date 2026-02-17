@@ -1,3 +1,8 @@
+![Airflow](https://img.shields.io/badge/Airflow-Docker-blue)
+![BigQuery](https://img.shields.io/badge/BigQuery-Data%20Warehouse-green)
+![Python](https://img.shields.io/badge/Python-3.x-yellow)
+![SQL](https://img.shields.io/badge/SQL-Database-blue)
+
 # Airflow EL Pipeline – PostgreSQL to BigQuery
 
 This repository contains the Extraction & Loading (EL) layer of an end-to-end Data Engineering pipeline.
