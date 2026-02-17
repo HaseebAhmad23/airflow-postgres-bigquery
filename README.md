@@ -1,9 +1,9 @@
-![Airflow](https://img.shields.io/badge/Airflow-Docker-blue)
-![BigQuery](https://img.shields.io/badge/BigQuery-Data%20Warehouse-green)
-![Python](https://img.shields.io/badge/Python-3.x-yellow)
-![SQL](https://img.shields.io/badge/SQL-Database-blue)
-
 # Airflow EL Pipeline – PostgreSQL to BigQuery
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-Orchestration-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white)
+![Google BigQuery](https://img.shields.io/badge/BigQuery-Data_Warehouse-4285F4?style=for-the-badge&logo=googlebigquery&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 This repository contains the Extraction & Loading (EL) layer of an end-to-end Data Engineering pipeline.
 
