@@ -138,7 +138,5 @@ The DAG:
 ---
 
 ##  Author
-```
-Haseeb Ahmad  (Full-Stack Developer)
-Data Engineering Project
-```
+ Haseeb Ahmad  (Full-Stack Developer)
+
