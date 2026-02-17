@@ -13,9 +13,9 @@ Apache Airflow DAG
 Python Operators
         ↓
 Google BigQuery (raw_data dataset)
-
-This project focuses exclusively on orchestration and data ingestion.
 ```
+This project focuses exclusively on orchestration and data ingestion.
+
 ---
 
 ## Technologies Used
@@ -62,14 +62,14 @@ airflow-postgres-bigquery/
 
 ## Setup Instructions
 
-### 1️- Install Docker (v24+ recommended)
+### 1️ Install Docker (v24+ recommended)
 ```
 docker --version
 docker compose version
 ```
 ---
 
-### 2️- Build Custom Airflow Image
+### 2️ Build Custom Airflow Image
 ```
 docker compose build --no-cache
 docker compose up airflow-init
@@ -77,7 +77,7 @@ docker compose up
 ```
 ---
 
-### 3️- Configure Google BigQuery Credentials
+### 3️ Configure Google BigQuery Credentials
 
 - Create a `keys/` folder and place your service account JSON file:
 ```
@@ -91,7 +91,7 @@ GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp-key.json
 ```
 ---
 
-### 4️- Access Airflow UI
+### 4️ Access Airflow UI
 
 http://localhost:8080
 
