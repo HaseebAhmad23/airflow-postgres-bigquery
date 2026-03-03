@@ -15,3 +15,14 @@ keys/
 
 # Docker
 *.pid
+
+# dbt
+dbt_transformation/target
+dbt_transformation/logs
+dbt_transformation/.user.yml
+dbt_transformation/dbt_packages
+dbt_transformation/analyses
+dbt_transformation/macros
+dbt_transformation/seeds
+dbt_transformation/tests
+dbt_transformation/snapshots
