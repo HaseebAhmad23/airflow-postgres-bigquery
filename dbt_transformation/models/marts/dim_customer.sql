@@ -21,6 +21,8 @@ customer_orders as (
         c.gender,
         c.city,
 
+        min(o.order_timestamp) as first_order_date,
+        max(o.order_timestamp) as most_recent_order_date,
         count(o.order_id) as number_of_orders
 
     from customers c
