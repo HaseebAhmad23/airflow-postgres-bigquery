@@ -34,6 +34,20 @@ The architecture separates the pipeline into two layers:
 
 ---
 
+## Source Database
+
+The PostgreSQL source database is a sample webshop dataset provided by [JannikArndt/PostgreSQLSampleDatabase](https://github.com/JannikArndt/PostgreSQLSampleDatabase).
+
+It includes:
+
+- **1,000** customers
+- **2,000** orders
+- **1,000** products with **17,730** different articles
+
+The schema and sample data were used to set up the local PostgreSQL instance that serves as the extraction source for the Airflow EL pipeline.
+
+---
+
 ## Technologies Used
 
 | Tool | Purpose |
