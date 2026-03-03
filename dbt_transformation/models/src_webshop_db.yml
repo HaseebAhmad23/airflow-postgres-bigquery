@@ -1,0 +1,14 @@
+
+version: 2
+
+sources:
+  - name: raw_data
+    database: postgresql-store-database
+    schema: raw_data
+    tables:
+      - name: customer
+      - name: order
+      - name: order_positions
+      - name: products
+      - name: address
+      
