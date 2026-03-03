@@ -1,0 +1,24 @@
+
+version: 2
+
+models:
+  - name: stg_customer
+    columns:
+      - name: customer_id
+        description: Unique id that identifies a customer.
+        tests:
+          - unique
+          - not_null  
+      - name: customer_id
+        description: Unique id that identifies a customer. It holds a reference to the stg_customer model.
+        tests:
+          - relationships:
+              to: ref('stg_customer')
+              field: customer_id
+  - name: stg_order
+    columns:
+      - name: order_id
+        description: Unique id that identifies an order.
+        tests:
+          - unique
+          - not_null  
