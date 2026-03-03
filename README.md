@@ -1,4 +1,4 @@
-# End-to-End ELT Pipeline – PostgreSQL → BigQuery → dbt
+# ELT Pipeline – PostgreSQL → Airflow → BigQuery → dbt
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Apache Airflow](https://img.shields.io/badge/Apache_Airflow-Orchestration-24bfbd?style=for-the-badge&logo=apacheairflow&logoColor=white)
